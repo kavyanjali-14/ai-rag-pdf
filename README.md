@@ -79,3 +79,8 @@ rag_app/
 │   └── script.js
 └── uploads/             # temp storage for uploaded PDFs (auto-cleared)
 ```
+
+python -m venv venv
+ venv\Scripts\activate 
+pip install recns.txt
+python app.py
