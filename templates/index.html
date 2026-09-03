@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG PDF Q&A</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>📄 RAG PDF Q&amp;A</h1>
+      <p>Upload a PDF, then ask questions about its content.</p>
+    </header>
+
+    <section class="upload-card" id="uploadCard">
+      <label for="pdfInput" class="upload-label">
+        <span id="fileNameDisplay">Click to choose a PDF file</span>
+      </label>
+      <input type="file" id="pdfInput" accept="application/pdf" hidden>
+      <button id="uploadBtn" class="btn primary" disabled>Upload &amp; Process</button>
+      <div id="uploadStatus" class="status"></div>
+    </section>
+
+    <section class="chat-card" id="chatCard" style="display:none;">
+      <div class="chat-window" id="chatWindow"></div>
+      <div class="chat-input-row">
+        <input type="text" id="questionInput" placeholder="Ask a question about the document..." disabled>
+        <button id="askBtn" class="btn primary" disabled>Ask</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
